@@ -3,6 +3,16 @@ transformarlos a enteros (parseInt) y Sumarlos.
 Mostar el resulto por medio de "ALERT"*/
 function sumar()
 {
+	var a;
+	var b;
+	a=375;
+	b=375;
 
+	a=document.getElementById('numeroUno').value
+	b=document.getElementById('numeroDos').value
+
+	var parseInt= a + b
+
+	alert()
 }
 
