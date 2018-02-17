@@ -1,4 +1,4 @@
-/*Al comenzar el juego generamos un número 
+/*Al comenzar el juego generamos un número
 secreto del 1 al 100, en la pantalla del juego
  dispondremos de un cuadro de texto para ingresar
   un número y un botón “Verificar”, si el número 
@@ -9,18 +9,42 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos;
-
+var numero
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
 	 
 		//alert(numeroSecreto );
-	
 
+		numeroSecreto=Math.floor(Math.random()*100)+1;
+		console.log(numeroSecreto);
+		
+		contadorIntentos=0;
+		
 }
-
 function verificar()
 {
-	
-	
-}
+	numero=document.getElementById('numero').value;
+	document.getElementById('intentos').value=contadorIntentos;
+		console.log(contadorIntentos++);
+
+		if (numeroSecreto==numero) 
+		{
+			alert("Usted es un ganador!!! y en solo "+contadorIntentos+ " intentos");
+
+		}
+
+		else if (numeroSecreto>numero) 
+		{	alert("falta");
+		} 
+		else if (numeroSecreto < numero)
+		{
+			alert("se paso")
+		}
+
+		if (contadorIntentos>10)
+		{
+			alert("Alcanzaste el limite de intentos");
+			return;
+		}
+}/*	Se usa un If y dos else if ya que hay 3 posibilidades de una misma variable, luego */
