@@ -12,13 +12,18 @@ function Mostrar()
 		contador++;
 		numero=prompt("ingrese un numero");
 		numero=parseInt(numero);
-		positivo=positivo+numero;
-		negativo=negativo*numero;
+		
 		if(numero>1)
-			{
+		{
 			positivo=positivo+numero;
-			}
+		}
 		else
+			{
+		if(numero<1)
+		{
+			negativo=negativo*numero;	
+		}
+			}
 		respuesta= prompt("Para continuar, si");
 
 	}

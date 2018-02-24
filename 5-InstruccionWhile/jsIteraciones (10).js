@@ -4,30 +4,57 @@ function Mostrar()
 	var contador=0;
 	//declarar contadores y variables 
 	var positivos=0;
-	var negativos=-1;
+	var negativos=0;
 	var contadorpositivos=0;
 	var contadornegativos=0;
-	var contadorceros;
+	var numerospares=2;
+	var contadorceros=0;
 	var numero;
 	var respuesta="si";
 
 	while(respuesta!="no")
 	{
+		
 		contador++;
 		numero=prompt("ingrese un numero");
 		numero=parseInt(numero);
-		negativos=negativos+numero;
-		positivos=positivos+numero;
-		contadorpositivos++;
-		contadornegativos++;
+		if(numero<0)
+		{
+			contadornegativos++;
+			negativos=negativos+numero;
+		}
+		else
+			{		
+			if(numero>0)
+				{
+				
+					contadorpositivos++;	
+					positivos=positivos+numero;
 
-		respuesta=prompt("Desea continuar? (no)");
+				}
+				else 
+				{
+					contadorceros++;
+				}
+				if(numero%2==0)
+					{
+						numerospares++;
+					}	
+
+			}
+
+		respuesta=prompt("Desea continuar? (no)");		
 	}
 
-	document.write("<br>suma de los negativos "+ negativos);
-	document.write("<br>suma de los positivos "+ positivos);
-	document.write("<br>cantidad de negativos "+ contadornegativos);
-	document.write("<br>cantidad de positivos "+ contadorpositivos);
+	document.write("<br>Suma de los negativos "+ negativos);
+	document.write("<br>Suma de los positivos "+ positivos);
+	document.write("<br>Cantidad de negativos "+ contadornegativos);
+	document.write("<br>Cantidad de positivos "+ contadorpositivos);
+	document.write("<br>Cantidad de ceros "+ contadorceros);
+	document.write("<br>Cantidad de numeros pares "+ numerospares);
+	document.write("<br>Promedio de positivos "+ positivos/contadorpositivos);
+	document.write("<br>Promedio de negativos "+ negativos/contadornegativos);
+	document.write("<br>Diferencia entre positivos y negativos "+ (positivos-negativos));
 /*1-Suma de los negativos.
 					2-Suma de los positivos.
 					3-Cantidad de positivos.
