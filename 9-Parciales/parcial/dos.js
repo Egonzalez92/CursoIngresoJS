@@ -1,18 +1,22 @@
 function Mostrar()
 {
-  
+  /*Se ingresa un porcentaje de descuento y el importe, mostrar cuanto se debe pagar*/
 	var importe;
-	var iva;
-	var total;
+	var descuento;
+	var totaldesc;
+	var preciofinal;
 
+	descuento=prompt("cual es el porcentaje de descuento");
+	descuento=parseInt(descuento);
 	importe=prompt("Cual es el importe del producto");
 	importe=parseInt(importe);
-	iva=0.21;
-	ivatotal=iva*importe;
-	total=importe + ivatotal;
-	
-	document.getElementById('importeFinal').value=total;
-	console.log("total");
+
+
+	totaldesc=descuento*importe/100;
+	preciofinal=importe-totaldesc;
+
+	document.getElementById('importeFinal').value=preciofinal;
+	console.log("preciofinal");
 	
 }
 
